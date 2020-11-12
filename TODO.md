@@ -1,10 +1,17 @@
 # Milestones for project
 
 ### Week 6 Nov 2nd
-- [ ] Read code on methods of finding good 'anchors'
+- [X] Read code on methods of finding good 'anchors'
         Wait to hear back from Gooogle rep to download search data
 - [ ] Clone repository files to my project repository
 - [ ] Collecting the Google Trends data for the anchor terms running this [script](https://github.com/statistical-lusardi/box_office_success_prediction/blob/master/preprocessing/collect_gt_data_anchors.R)
+
+### Completed Nov 11
+
+- [X] Moving through file by file to find out the functions of box office prediction finished preprocess_movies_data
+- [X] added a note-taking folder that keeps progress of my dictated findings on each file to reference question I may have had
+- [X] New objective is to move through all files by next week and have dictated notes on each one. see what functions are actually necessary.
+
 
 ### Week 7 Nov 9th
 - [ ] Prepare OSF guest count data in processed format for script to handle
