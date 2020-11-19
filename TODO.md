@@ -20,6 +20,15 @@
 
 ### Week 8 Now 16th
 - [ ] Collecting and scaling the Google Trends data for the defined search terms running this [script](https://github.com/statistical-lusardi/box_office_success_prediction/blob/master/preprocessing/collect_gt_data_search_terms.R)
+- [X] Met with Manuel Schmitz, the author of the google searches program and found that there were quite a few things I did not need to include in my project.
+  * The function for keywords can be solved by inserting related searches found on google adwords. 
+  * Subtracting the median of the searches is only necessary for movies such as star wars because the search volume is already high to begin with. I do not have that issue. 
+  * I do not need to run the adjustment for time on forecast date because this was made to adjust for a movie date in Germany. 
+  * The anchor words are the only words that are necessary to scale the zeros out of the relative search activity.
+- [X] New focus, need to adjust the time frame for a search during a certain week thenn work with monthly searches and then seasonal searches.
+
+
+
 - [ ] Substracting the median of the time series running this [script](https://github.com/statistical-lusardi/box_office_success_prediction/blob/master/preprocessing/preprocess_gt_data.R)
 
 ### Week 9 Nov 23rd
