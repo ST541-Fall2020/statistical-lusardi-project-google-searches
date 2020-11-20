@@ -11,7 +11,13 @@ OSF_data <- read_csv("data/OSF_data_source_0.csv",
                                       lunch_sales = col_number(), ppl_res_din = col_double(), 
                                       ppl_res_lun = col_double(), pred_din = col_double(), 
                                       pred_lunch = col_double(), temp_avg = col_number()))
+head(OSF_data)
 
+OSF_data$date = as.POSIXct(OSF_data$date, format = "%d.%m.%y")
+
+
+str(OSF_data$date)
+tail(OSF_data$date,1)
 # throw out columns with irrelvant data keep guest counts dates and reservations
 indexes<-c(1,3,6,7,8,14,16,17)
 OSF_data<-OSF_data[indexes]
@@ -51,4 +57,4 @@ OSF_data
 #downloading a csv of the search term history from selected dates on three search terms from Eugene OR
 
 
-save.image("data/OSF_preprocessed.RData")
+save.image("data/OSF_preprocessed_run1.RData")

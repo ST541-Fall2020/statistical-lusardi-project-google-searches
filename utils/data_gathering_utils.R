@@ -7,7 +7,7 @@ require(reshape2)
 require(matrixStats)
 
 
-export_gt_data <- function(terms, startdates, enddates = NULL, geo = "DE", anker, ...) {
+export_gt_data <- function(terms, startdates, enddates = NULL, geo = "US-OR", anker, ...) {
   #' Function to gather Google Trends data
   #' 
   #' @param terms [character]: Search terms
