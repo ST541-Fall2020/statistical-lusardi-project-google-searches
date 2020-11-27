@@ -57,4 +57,5 @@ OSF_data
 #downloading a csv of the search term history from selected dates on three search terms from Eugene OR
 
 
-save.image("data/OSF_preprocessed_run1.RData")
+save.image("data/OSF_preprocessed.RData")
+

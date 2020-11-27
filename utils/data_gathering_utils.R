@@ -65,7 +65,7 @@ export_gt_data <- function(terms, startdates, enddates = NULL, geo = "US-OR", an
       
       gt_casted$start <- gt_output$date[1:weeks]
       gt_casted$end <- c(gt_output$date[2:weeks], tail(gt_output$date, 1) + as.difftime(tim = 7, units = "days"))
-      gt_casted$end <- as.Date(gt_casted$end, format = "%Y-%m%-%d", tz = "GMT")
+      gt_casted$end <- as.Date(gt_casted$end, format = "%Y-%m%-%d")
       gt_casted <- gt_casted[, c("start", "end", current_terms_output)]
       colnames(gt_casted) <- c("start", "end", current_terms)
       trends[[i]] <- cbind(gt_casted[, 1:2], gt_casted[, 3:ncol(gt_casted)] / gt_casted[, 3])
