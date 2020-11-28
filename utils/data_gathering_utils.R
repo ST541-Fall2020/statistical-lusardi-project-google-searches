@@ -5,6 +5,21 @@ require(Hmisc)
 require(chron)
 require(reshape2)
 require(matrixStats)
+# other packages
+.libPaths("C:\\Users\\USER\\.exploratory\\R\\4.0")
+
+require(janitor)
+require(lubridate)
+require(hms)
+require(tidyr)
+require(stringr)
+require(readr)
+require(forcats)
+require(RcppRoll)
+require(dplyr)
+require(tibble)
+require(bit64)
+require(exploratory)
 
 
 export_gt_data <- function(terms, startdates, enddates = NULL, geo = "US-OR", anker, ...) {

@@ -20,7 +20,8 @@ select_gt_data = function(trends, enddates, terms) {
   data = matrix(nrow = nrow(trends), ncol = 6)
   data_aggregated = matrix(nrow = nrow(trends), ncol = 6)
   for(i in seq_along(terms)) {
-    end = which(as.character(enddates[i]) == colnames(trends))
+    # changed endates[i] to endates
+    end = which(as.character(enddates) == colnames(trends))
     start = end - 5
     data[i, ] = trends[i, start:end]
   }
@@ -54,7 +55,8 @@ calculate_median = function(trends, enddates, terms, frame = 52) {
   trends = as.matrix(trends[, -1])
   data = matrix(nrow = nrow(trends), ncol = frame)
   for(i in seq_along(terms)) {
-    end = which(as.character(enddates[i]) == colnames(trends)) - 6
+    # changed endates[i] to endates
+    end = which(as.character(enddates) == colnames(trends)) - 6
     start = end - (frame - 1)
     data[i, ] = trends[i, start:end]
   }

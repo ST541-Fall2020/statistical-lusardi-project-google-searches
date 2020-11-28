@@ -47,41 +47,9 @@ for (i in 2:length(ankers)){
 x
 # Build final Google Trends dataset
 gt_data_main_search_terms <- x
-gt_data_main_search_terms <- as.data.frame(t(gt_data_main_search_terms[,4:ncol(gt_data_main_search_terms)]))
+gt_data_main_search_terms<-gt_data_main_search_terms[,c(-2,-3)]
+colnames(gt_data_main_search_terms)[1]<-c("dates")
 gt_data_main_search_terms
-colnames(gt_data_main_search_terms) <- gt_data1[, 2]
-rownames(gt_data_main_search_terms) <- 1:nrow(gt_data_main_search_terms)
 
-terms
-
-names_upper <- colnames(upper_gt[, -c(1:3)])
-names_lower <- colnames(lower_gt[, -c(1:3)])
-lower_gt <- lower_gt[, -c(1:3)]
-
-scale_id <- which(names_upper %in% names_lower)
-
-
-gt_data_main_search_terms <- cbind("title" = terms, gt_data_main_search_terms)
-head(gt_data_main_search_terms)
-rm(list = ls() [which(ls() != "gt_data_main_search_terms")])
 save.image("data/gt_data_main_search_terms.RData")
 
-
-# Build final Google Trends dataset
-#gt_data_main_title_film <- x
-#gt_data_main_title_film <- as.data.frame(t(gt_data_main_title_film[,4:ncol(gt_data_main_title_film)]))
-#colnames(gt_data_main_title_film) <- gt_data1[, 2]
-#rownames(gt_data_main_title_film) <- 1:nrow(gt_data_main_title_film)
-#gt_data_main_title_film <- cbind("title" = movies$title, gt_data_main_title_film)
-#head(gt_data_main_title_film)
-#rm(list = ls() [which(ls() != "gt_data_main_title_film")])
-
-
-## collect actual terms of interest
-# Filter for relevant Google Trends Data
-main_title_final <- select_gt_data(trends = gt_data_main_title, enddates = enddates, terms = gt_data_main_search_terms$title)
-colnames(main_title_final) <- c("title", paste0("week", 6:1, "_main_title"), 
-                                paste0("aggregation", 6:1, "_main_title"))
-head(main_title_final)
-
-save.image("data/gt_data_complete.RData")

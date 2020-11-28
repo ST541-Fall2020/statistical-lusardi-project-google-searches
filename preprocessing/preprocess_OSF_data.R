@@ -41,20 +41,23 @@ OSF_data$month <- factor(strftime(OSF_data$date, format = "%b"))
 OSF_data$season<- as.factor(ifelse(test = OSF_data$month %in% c("Oct", "Nov", "Dec", "Jan", "Feb", "Mar"), 
                                    yes = "winter", no = "summer"))
 
-OSF_data
 
+## summarize the dataframe
+# Steps to produce the summarized  output
+OSF_sum<-exploratory::getObjectFromRdata("C:\\Users\\USER\\Documents\\statistical-lusardi-project-google-searches\\data\\OSF_preprocessed.RData","OSF_data") %>%
+  readr::type_convert() %>%
+  exploratory::clean_data_frame() %>%
+  mutate(din_ly = parse_number(din_ly)) %>%
+  summarize_group(group_cols = c(`date_week` = "date"),
+                  group_funs = c("rtoweek"),
+                  din_ly_sum = sum(din_ly, na.rm = TRUE),
+                  din_2y_sum = sum(din_2y, na.rm = TRUE),
+                  guest_count_dinner_sum = sum(guest_count_dinner, na.rm = TRUE),
+                  ppl_res_din_sum = sum(ppl_res_din, na.rm = TRUE),
+                  temp_avg_mean = mean(temp_avg, na.rm = TRUE),
+                  month_unq = n_distinct(month),
+                  season_unq = n_distinct(season))
 
-
-#CHANGE TO THREE KEYWORDS took keywords from google trends to find the most popular search terms 
-# the function define search terms is not necessary because of this
-
-
-# Define searchterms for Google Trends this will be changed to just three search entries not 800 movies 
-#main_title <- define_searchterms(movies$title)[[1]]
-#main_title_film <- define_searchterms(movies$title)[[2]]
-#complete_title <- define_searchterms(movies$title)[[3]]
-
-#downloading a csv of the search term history from selected dates on three search terms from Eugene OR
 
 
 save.image("data/OSF_preprocessed.RData")

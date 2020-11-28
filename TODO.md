@@ -14,12 +14,12 @@
 
 
 ### Week 7 Nov 9th
-- [ ] Prepare OSF guest count data in processed format for script to handle
-- [ ] Find an adequate timeframe, weeks, months, and adjust accordingly for prediction. (to match study)
-- [ ] Google Trends data will be collected and preprocessed. reference this [article](https://towardsdatascience.com/using-google-trends-data-to-leverage-your-predictive-model-a56635355e3d) for help
+- [X] Prepare OSF guest count data in processed format for script to handle
+- [X] Find an adequate timeframe, weeks, months, and adjust accordingly for prediction. (to match study)
+- [X] Google Trends data will be collected and preprocessed. reference this [article](https://towardsdatascience.com/using-google-trends-data-to-leverage-your-predictive-model-a56635355e3d) for help
 
 ### Week 8 Now 16th
-- [ ] Collecting and scaling the Google Trends data for the defined search terms running this [script](https://github.com/statistical-lusardi/box_office_success_prediction/blob/master/preprocessing/collect_gt_data_search_terms.R)
+- [X] Collecting and scaling the Google Trends data for the defined search terms running this [script](https://github.com/statistical-lusardi/box_office_success_prediction/blob/master/preprocessing/collect_gt_data_search_terms.R)
 - [X] Met with Manuel Schmitz, the author of the google searches program and found that there were quite a few things I did not need to include in my project.
   * The function for keywords can be solved by inserting related searches found on google adwords. 
   * Subtracting the median of the searches is only necessary for movies such as star wars because the search volume is already high to begin with. I do not have that issue. 

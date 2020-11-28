@@ -19,13 +19,14 @@ enddate <- tail(OSF_data$date,1)
 ankers <- c("facebook", "google","gmail","amazon","youtube","ebay","yahoo","netflix","google maps",
             "craigslist","fox news","cnn")
 
-
+?gtrends
 # Link first anker to its median
 gt_anker1_median <- gtrends(
   keyword = ankers[1], geo = "US-OR", 
   time = paste(as.character(trunc(startdate, "months")), as.character(ceil(enddate, "months"))))
 gt_anker1_median <- gt_anker1_median$interest_over_time
 gt_anker1_median <- gt_anker1_median$hits / median(gt_anker1_median$hits)
+
 
 for (i in 2:length(ankers)){
   assign(paste0("gt_anker", i-1, "_anker", i),
