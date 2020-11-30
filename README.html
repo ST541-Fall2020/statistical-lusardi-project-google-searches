@@ -370,103 +370,39 @@ summary {
 <p>Name: Anthony Lusardi</p>
 <!-- badges: start -->
 <!-- badges: end -->
-<div id="overview" class="section level3">
-<h3>Overview</h3>
-<p>What I hope to complete with this project is to use available data collected on google searches to answer questions about restaurant business patterns. By using search patterns a relationship could be drawn from the amount of traffic activity online with the amount of clientle the restaurant receives at dinner time.</p>
-<p>If this proves to be correct, I can generate a linear regression model to predict the average amount of guests expected to come in on a given day based on the web searches collected from local areas.</p>
+<div id="overview-and-motivation" class="section level3">
+<h3>Overview and Motivation</h3>
+<hr />
+<p>What I hope to complete with this project is to use available data collected on google searches to answer questions about restaurant business patterns. By using search patterns a relationship could be drawn from the amount of traffic activity online with the amount of clientle the restaurant receives at dinner time. If this proves to be correct, I can generate a linear regression model to predict the average amount of guests expected to come in on a given day based on the web searches collected from local areas.</p>
+<div id="collecting-data-from-a-data-monopoly" class="section level4">
+<h4>Collecting data from a Data Monopoly</h4>
+<p>Google has a strict hold on their data and especially to the data that matters the most as a result there has been some successful ways to collect this data using scaling search volume for constant keywords to isolate activity on keywords of interest. There is more of this method mentioned in this paper (insert link)</p>
+</div>
+<div id="normalize-the-data." class="section level4">
+<h4>Normalize the data.</h4>
 <p>Because Google Trends has data that is scaled relative to its search activity within the area, I need to create a system of normalizing this data with itself from a scale of 0 to 1. I also need to normalize the Guest count and reservation data to do the same. Part of this process will include working with code that will use weighting function to assign a relative value of a Google search in relation with all searches in the area.</p>
 <p>Once the data is combined, I seek to find a correlation between the provided variables. If the relationship is strong I will generate a linear regression model to predict the amount of guests based on Google searches.</p>
-<p>In order to run the project there are four main parts to this repository: 1) preprocessing: contains 2) data 3) utils 4) data_analysis</p>
-<p>Data gathering, -preprocessing and data analysis</p>
-<p>The provided dataset contains key data for recorded guest activity at the Old Spaghetti Factory in Corvallis OR, between 01/01/2018 and 12/31/2019. It contains 100 features of the movies like age rating, genre, studio as well as the number of ordered copies which is referring to the number of cinemas in which a movie is presented and the number of visitors of the movies on the first weekend. The number of visitors is the target which will be forecasted.</p>
-<table>
-<colgroup>
-<col width="38%"></col>
-<col width="61%"></col>
-</colgroup>
-<thead>
-<tr class="header">
-<th>Feature name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>date</code></td>
-<td>YMD of recorded data</td>
-</tr>
-<tr class="even">
-<td><code>day_week</code></td>
-<td>Day of the week</td>
-</tr>
-<tr class="odd">
-<td><code>special_event</code></td>
-<td>Recorded if there were special events such as athletic events or school graduations</td>
-</tr>
-<tr class="even">
-<td><code>6_week_lun</code></td>
-<td>the 6 week trend of average guest counts for that week day at lunch</td>
-</tr>
-<tr class="odd">
-<td><code>6_week_din</code></td>
-<td>the 6 week trend of average guest counts for that week day at dinner</td>
-</tr>
-<tr class="even">
-<td><code>lun_ly</code></td>
-<td>last years guests for lunch shifted for the day of the week (date-1,incomplete)</td>
-</tr>
-<tr class="odd">
-<td><code>din_ly</code></td>
-<td>last years guests for dinner shifted for the day of the week (date-1, incomplete)</td>
-</tr>
-<tr class="even">
-<td><code>din_2y</code></td>
-<td>two years ago guests for dinner shifted for the day of the week (date-2, incomplete)</td>
-</tr>
-<tr class="odd">
-<td><code>pred_lunch</code></td>
-<td>The managers educated guess as to the amount of guest counts expected for that day at lunch</td>
-</tr>
-<tr class="even">
-<td><code>pred_din</code></td>
-<td>The managers educated guess as to the amount of guest counts expected for that day at dinner</td>
-</tr>
-<tr class="odd">
-<td><code>lunch_sales</code></td>
-<td>Total sales at lunch that day (incomplete)</td>
-</tr>
-<tr class="even">
-<td><code>dinner_sales</code></td>
-<td>Total sales of dinner that day (incomplete)</td>
-</tr>
-<tr class="odd">
-<td><code>guest_count_lunch</code></td>
-<td>Total guests for lunch for the given day</td>
-</tr>
-<tr class="even">
-<td><code>guest_count_dinner</code></td>
-<td>Total guests for dinner for the given day</td>
-</tr>
-<tr class="odd">
-<td><code>ppl_res_lun</code></td>
-<td>Total people that are in reservations for lunch on the given day</td>
-</tr>
-<tr class="even">
-<td><code>ppl_res_din</code></td>
-<td>Total people that are in reservations for dinner on the given day</td>
-</tr>
-<tr class="odd">
-<td><code>temp_avg</code></td>
-<td>The average Temperature for the day</td>
-</tr>
-</tbody>
-</table>
-<p>After preprocessing of the raw movie data is done in this script the Google Trends data will be collected and preprocessed. I recommend reading more on how we preprocessed the data in this article.</p>
-<p>The order how to run the scripts to gather and preprocess the Google Trends data is</p>
-<p>Collecting the Google Trends data for the anchor terms running this script Collecting and scaling the Google Trends data for the defined search terms running this script Substracting the median of the time series running this script For every movie we defined 2 to 3 search terms. The main title, the main title + the suffix film and - if the movie has a secondary title, the complete title. We built a Google Value as linear combination of the 3 search terms. After preprocessing the Google Trends data for every search term by running the scripts in the mentioned order we need to melt the 3 search terms for each movie to a single KPI (Google Value gv) by applying a linear transformation. To do so we’ll melt the search volumina of the main title (mt) and main title + “film” (mtf) to a single value. If the movie has a subtitle we’ll take the search volume of the complete title (ct) into consideration in a second step. The resulting linear combination should maximize the correlation between the Google Value and the amount of visitors:</p>
 </div>
-<div id="section" class="section level3">
-<h3></h3>
+</div>
+<div id="data-gathering--preprocessing-and-data-analysis" class="section level3">
+<h3>Data gathering -preprocessing and data analysis</h3>
+<hr />
+<p>The provided dataset contains key data for recorded guest activity at the Old Spaghetti Factory (OSF) in Corvallis OR, between 01/01/2018 and 12/31/2019. It contains 17 features of key data associated with predicted guest activity such as guest counts from the previous years, managers predictions, and six week trends. The guest counts for dinner will be the target variable that will be predicted.</p>
+<p>After preprocessing of the raw OSF data is done in this script(insert link) the Google Trends data will be collected and preprocessed. I recommend reading more on how we preprocessed the data in this report.</p>
+<p>The order how to run the scripts to gather and preprocess the Google Trends data is</p>
+<ul>
+<li>Collecting the Google Trends data for the anchor terms running this script(insert link)</li>
+<li>Collecting and scaling the Google Trends data for the defined search terms running this script(insert link)</li>
+</ul>
+<p>For data analysis and testing following a rmd document here (insert link) Using a program called exploratory note</p>
+</div>
+<div id="report-and-presentation" class="section level3">
+<h3>Report and Presentation</h3>
+<hr />
+<ul>
+<li>The slides can be found here for the presentation (insert link)</li>
+<li>The final report on results can be found here (insert link)</li>
+</ul>
 </div>
 </div>
 
