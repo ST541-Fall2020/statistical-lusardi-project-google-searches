@@ -1,0 +1,46 @@
+---
+title: "Report"
+author: "Anthony Lusardi"
+date: "11/29/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+
+
+```
+
+|Feature name |Description|
+|-----|--------|
+|`date` | YMD of recorded data
+|`day_week`| Day of the week
+|`special_event`| Recorded if there were special events such as athletic events or school graduations
+|`6_week_lun`| the 6 week trend of average guest counts for that week day at lunch
+|`6_week_din`| the 6 week trend of average guest counts for that week day at dinner
+|`lun_ly`| last years guests for lunch shifted for the day of the week (date-1,incomplete) 
+|`din_ly`|last years guests for dinner shifted for the day of the week (date-1, incomplete)
+|`din_2y`|two years ago guests for dinner shifted for the day of the week (date-2, incomplete)
+|`pred_lunch`| The managers educated guess as to the amount of guest counts expected for that day at lunch
+|`pred_din`|The managers educated guess as to the amount of guest counts expected for that day at dinner
+|`lunch_sales`| Total sales at lunch that day (incomplete)
+|`dinner_sales`| Total sales of dinner that day (incomplete)
+|`guest_count_lunch`| Total guests for lunch for the given day
+|`guest_count_dinner`| Total guests for dinner for the given day
+|`ppl_res_lun`| Total people that are in reservations for lunch on the given day
+|`ppl_res_din`| Total people that are in reservations for dinner on the given day
+|`temp_avg`| The average Temperature for the day 
+
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
