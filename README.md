@@ -33,10 +33,12 @@ The order how to run the scripts to gather and preprocess the Google Trends data
 * Collecting the Google Trends data for the anchor terms running this script(insert link)
 * Collecting and scaling the Google Trends data for the defined search terms running this script(insert link)
 
-For data analysis and testing following a rmd document here (insert link) Using a program called exploratory note 
+For data analysis and testing following an html document here (insert link) it was used using a Using a program called exploratory note 
 
 ### Report and Presentation
 
 -------------------------------------------------------------------------------------------------
 * The slides can be found here for the presentation (insert link)
 * The final report on results can be found here (insert link)
+
+
