@@ -39,6 +39,6 @@ For data analysis and testing following an html document here (insert link) it w
 
 -------------------------------------------------------------------------------------------------
 * The slides can be found here for the presentation (insert link)
-* The final report on results can be found here (insert link)
+* The final report on results can be found [here](https://github.com/ST541-Fall2020/statistical-lusardi-project-google-searches/blob/master/reports/Report_final.pdf) 
 
 
