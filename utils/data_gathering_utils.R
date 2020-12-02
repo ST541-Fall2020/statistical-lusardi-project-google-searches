@@ -5,7 +5,6 @@ require(Hmisc)
 require(chron)
 require(reshape2)
 require(matrixStats)
-# other packages
 .libPaths("C:\\Users\\USER\\.exploratory\\R\\4.0")
 
 require(janitor)

@@ -19,7 +19,7 @@ enddate <- tail(OSF_data$date,1)
 ankers <- c("facebook", "google","gmail","amazon","youtube","ebay","yahoo","netflix","google maps",
             "craigslist","fox news","cnn")
 
-?gtrends
+
 # Link first anker to its median
 gt_anker1_median <- gtrends(
   keyword = ankers[1], geo = "US-OR", 
@@ -37,7 +37,6 @@ for (i in 2:length(ankers)){
 gt_anker1_anker2 <- gt_anker1_median * gt_anker1_anker2[, 4]
 
 
-gt_anker1_anker4
 for (i in 3:length(ankers)){
   assign(paste0("gt_anker", 1, "_anker", i), 
          get(paste0("gt_anker", 1, "_anker", i-1)) * get(paste0("gt_anker", i-1, "_anker", i))[, 4])
