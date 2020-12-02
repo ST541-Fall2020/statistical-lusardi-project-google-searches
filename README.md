@@ -28,7 +28,7 @@ The order how to run the scripts to gather and preprocess the Google Trends data
 * Collecting the Google Trends data for the anchor terms running this [script](https://github.com/ST541-Fall2020/statistical-lusardi-project-google-searches/blob/master/preprocessing/collect_gt_data_anchors.R)
 * Collecting and scaling the Google Trends data for the defined search terms running this [script](https://github.com/ST541-Fall2020/statistical-lusardi-project-google-searches/blob/master/preprocessing/collect_gt_data_search_terms.R)
 
-For data analysis and testing following an html document here (insert link) it was used using a Using a program called exploratory note 
+For data analysis and testing following an html document [here](https://exploratory.io/note/IEq5cNN3oJ/Data-Analysis-for-Google-search-Project-zrI2FqZ8mx) it was used using a Using a program called exploratory note 
 For all functions and specific packages can be found in the utils [here](https://github.com/ST541-Fall2020/statistical-lusardi-project-google-searches/tree/master/utils)
 
 ### Report and Presentation
