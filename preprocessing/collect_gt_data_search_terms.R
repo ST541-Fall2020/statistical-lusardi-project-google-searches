@@ -11,8 +11,6 @@ last_forecast_date<-trunc(last_forecast_date,"days")
 
 
 
-
-
 terms <- c("the old spaghetti factory","spaghetti factory","spaghetti factory corvallis","old spaghetti factory","italian food",
            "dinner near me","trolley restaurant","dine in","Pastinis")
 
